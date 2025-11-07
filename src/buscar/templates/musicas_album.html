@@ -1,0 +1,36 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h2>{{ album.collectionName }}</h2>
+        <p>Artista: {{ album.artistName }}</p>
+        <img src="{{ album.artworkUrl100 }}" alt="Capa do álbum" id="main-logo"><br><br>
+
+        <h3>Lista de músicas:</h3>
+        {% if musicas %}
+            <ol>
+                {% for musica in musicas %}
+                    <li>
+                        <a href="{{ musica.youtube_link }}" target="_blank" title="Buscar no Youtube">
+                            {{ musica.trackName }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p>Nenhuma música encontrada.</p>
+        {% endif %}
+
+
+        <a href="/">Voltar</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* style.css */
+
+/* 1. RESET BÁSICO E DEFINIÇÕES GERAIS */
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão limpa */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fundo cinza claro */
+    color: #333; /* Cor do texto principal */
+    line-height: 1.6;
+}
+
+/* 2. LAYOUT E CONTEÚDO PRINCIPAL */
+header {
+    background-color: #402c50; /* Azul escuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Para posicionar o botão se necessário */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto; /* Centraliza o conteúdo principal */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. ESTILO DOS TÍTULOS E SEÇÕES */
+h2, h3 {
+    color: #8a34db; /* Azul vibrante para títulos */
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+/* 4. ESTILO DE FORMULÁRIOS (index.html) */
+form label {
+    display: block; /* Garante que os labels ocupem toda a largura */
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    background-color: #8234db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* 5. ESTILO DE LISTAS E LINKS (resultado.html e musicas_album.html) */
+ul, ol {
+    list-style-type: none; /* Remove marcadores padrão */
+    padding-left: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 5px solid #bdc3c7; /* Linha de destaque lateral */
+}
+
+li:hover {
+    background-color: #eff3f7;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o link "Voltar" */
+main a[href="/"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #333;
+}
+
+#main-logo {
+    width: 250px;
+
+    height: auto;
+
+    display: block;
+    margin: 0 auto 10px
+}
+
+/* Estilo para o link/botão de Login */
+.login-button {
+    background-color: #e74c3c; /* Vermelho/laranja */
+    color: white;
+    padding: 8px 15px;
+    border: 1px solid #c0392b;
+    border-radius: 4px;
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #c0392b;
+}
+
+/* Posiciona o botão (Exemplo: no canto superior direito) */
+.header-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

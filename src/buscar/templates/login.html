@@ -1,0 +1,27 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Search - Login</title>
+
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>Login</header>
+        <main>
+            <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+                <label>Nome</label>
+                <input type="text" name="nome" placeholder="Digite seu nome..." required><br>
+                <label>Email</label>
+                <input type="email"name="email" placeholder="Digite seu email..." required><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <a href="/">Voltar</a>
+        </main>
+    </body>
+</html>

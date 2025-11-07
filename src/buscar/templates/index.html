@@ -1,0 +1,40 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Music Search</title>
+        <meta name="description" content="menu interativo de músicas e álbuns dos artistas">
+
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Music Search</h1>
+            <p>Busque pelo álbum ou música do seu artista favorito!</p>
+
+            <div class="header-actions">
+                <a href="{% url 'login' %}" class="login-button">Login</a>
+            </div>
+        </header>
+        <main>
+            <h2>Busca de Banda</h2>
+
+            <form action="/resultado/" method="POST">
+            {% csrf_token %}
+            <label>Nome da Banda/Cantor:</label>
+            <input type="text" name="banda" required><br><br>
+
+            <label>O que você quer buscar?</label><br>
+            <input type="radio" name="tipo" value="album"> Álbum<br>
+            <input type="radio" name="tipo" value="musica"> Música<br>
+            <input type="radio" name="tipo" value="banda" checked> Só a Banda<br><br>
+
+            <label>Se quiser, digite o nome da música:</label><br>
+            <input type="text" name="termo"><br><br>
+
+            <button type="submit">Buscar</button>
+            </form>
+
+        </main>
+
+    </body>
+</html>

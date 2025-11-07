@@ -1,0 +1,62 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resultados</title>
+
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <main>
+            {% if banda_encontrada %}
+                <h2>Resultados para {{ banda }}</h2>
+
+                {% if tipo_busca == "album" %}
+                <h3>Álbuns encontrados:</h3>
+                <ul>
+                    {% for item in resultados %}
+                    <li>
+                        <a href="{% url 'musicas_album' item.collectionId %}">
+                        {{ item.collectionName }} ({{ item.releaseDate|slice:":4" }})
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% elif tipo_busca == "musica" %}
+                    {% if resultados %}
+                    <h3>Músicas encontradas:</h3>
+                    <ul>
+                        {% for item in resultados %}
+                        <li>
+                            <a href="{{ item.youtube_link }}" target="_blank" title="Buscar no Youtube">
+                                {{ item.trackName }}
+                            </a>
+                            - {{ item.collectionName }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <h2>Música não encontrada...</h2>
+                    {% endif %}
+                {% else %}
+                <h3>Músicas:</h3>
+                <ul>
+                    {% for item in resultados %}
+                    <li>
+                        <a href="{{ item.youtube_link }}" target="_blank" title="Buscar no Youtube">
+                            {{ item.trackName }}
+                        </a>
+                        — {{ item.collectionName }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% else %}
+            <h2>Banda não encontrada...</h2>
+            {% endif %}
+
+            <a href="/">Voltar</a>
+        </main>    
+    </body>
+</html>
