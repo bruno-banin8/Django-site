@@ -1,6 +1,6 @@
 import requests
 from django.shortcuts import render, redirect
-from urllib.parse import quote # CORREÇÃO: Importar 'quote' da biblioteca padrão Python
+from urllib.parse import quote
 from .models import User
 
 def get_youtube_search_url(banda, musica):
@@ -71,7 +71,6 @@ def resultado(request):
 
 
 def musicas_album(request, album_id):
-    # Lógica que busca a banda original (se você implementou a correção anterior)
     banda_original = request.GET.get('banda')
     
     url = f"https://itunes.apple.com/lookup?id={album_id}&entity=song"
